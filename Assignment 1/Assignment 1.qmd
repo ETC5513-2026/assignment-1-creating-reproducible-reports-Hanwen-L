@@ -1,5 +1,15 @@
 ---
 title: "Assignment 1"
+author: "Hanwen Liu"
+format:
+  html: default
+  pdf: default
+  execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
-##
+## Introduction
+## Research Question
+
