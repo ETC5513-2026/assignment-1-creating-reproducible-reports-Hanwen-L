@@ -22,12 +22,61 @@ library(tidyverse)
 library(knitr)
 library(lubridate)
 
-data <- read_csv("data/36506370_Hanwen Liu.csv")
+setwd("/Users/lauhanwen/assignment-1-creating-reproducible-reports-Hanwen-L")
+data <- read_csv("./data/36506370_Hanwen Liu.csv")
 ```
 
-
+##
 ```{r}
 data <- data |> 
   drop_na(purchase_amount,marketing_spend) |> 
   mutate(signup_date = parse_date_time(signup_date, orders = c("mdy", "ymd", "dmy")))
+```
+
+## 
+```{r}
+#| label: fig-segment-counts
+#| echo: false
+#| fig-cap: "Count of customers in each market segment."
+
+ggplot(data, aes(x = segment, fill = segment)) +
+  geom_bar(color = "black", alpha = 0.8) +
+  theme_minimal() +
+  labs(x = "Customer Segment", y = "Number of Customers") +
+  theme(legend.position = "none")
+```
+
+## 
+
+```{r}
+#| label: summary-table
+#| echo: false
+
+data %>%
+  group_by(segment) |> 
+  summarise(
+    `Avg Spend ($)` = round(mean(marketing_spend), 2),
+    `Max Spend ($)` = round(max(marketing_spend), 2),
+    `Avg Purchase ($)` = round(mean(purchase_amount), 2),
+    `Total Customers` = n()
+  ) |> 
+  kable(caption = "Campaign Financial Summary by Customer Segment")
+```
+
+## Results
+
+
+```{r}
+#| label: fig-scatter-spend-purchase
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Relationship between individual marketing spend and total purchase amount."
+
+ggplot(data, aes(x = marketing_spend, y = purchase_amount)) +
+  geom_point(alpha = 0.6, color = "darkblue") +
+  geom_smooth(method = "lm", color = "darkorange", se = TRUE) +
+  theme_minimal() +
+  labs(x = "Marketing Spend per Customer ($)",
+       y = "Total Purchase Amount ($)")
 ```
