@@ -32,7 +32,9 @@ data <- read_csv("./data/36506370_Hanwen Liu.csv")
 ```
 
 ## Dataset Description
- The variables include a mix of numeric data for financial and engagement metrics, categorical data for customer segmentation, and standardized datetime data for sign-ups.
+ The cleaned dataset consists of `r nrow(clean_data) `observations and `r ncol(clean_data) `variables, representing individual customers engaged during the campaign. The dataset encompasses multiple variable types that provide a comprehensive view of customer behavior. Specifically, it includes continuous numeric variables tracking financial metrics and engagement, categorical variables defining market `groups (segment)`, and standardized datetime structures for registration.
+
+To provide broader context for our analysis, it is essential to understand the composition of our customer base. As illustrated in @fig-segment-counts, our customers are categorized into distinct business segments. Understanding this distribution ensures that our marketing insights are grounded in the reality of our audience structure. Furthermore, the summary statistics table reveals the average and maximum financial figures across these segments. By examining these aggregated summaries, we can establish a baseline of typical spending behavior before diving into the individual correlational analysis.
 ```{r}
 #| warning: false
 #| echo: false
