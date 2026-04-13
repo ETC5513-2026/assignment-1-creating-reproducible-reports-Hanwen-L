@@ -14,7 +14,7 @@ format:
 - Correct the description
 
 ## Screenshots
-![How to clean dates in various formats in R](images/Date cleaning.png)
-![How to display linear regression results in R](images/Liner regression.png)
-![Correct the description](images/Correct English.png)
+![How to clean dates in various formats in R](../images/Date cleaning.png)
+![How to display linear regression results in R](../images/Liner regression.png)
+![Correct the description](../images/Correct English.png)
 
