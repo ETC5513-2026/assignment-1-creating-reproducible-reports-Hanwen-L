@@ -72,7 +72,7 @@ data %>%
 ```
 
 ## Results
-As illustrated in @fig-scatter-spend-purchase, we can observe the relationship between the amount spent on marketing per customer and their total purchase amount. By plotting these two key variables, the trend line helps us visualize whether higher marketing investments systematically yield higher returns from those users. According to the current dataset, our maximum individual purchase amount reached `round(max(purchase_amount), 2)`, associated with varying levels of campaign spend. By evaluating the trajectory and cluster of these data points, we can conclude the answer to our research question: the positive slope of the trend line visually demonstrates that increased marketing spend per customer effectively drives higher overall purchase volumes.
+As illustrated in @fig-scatter-spend-purchase, we can observe the relationship between the amount spent on marketing per customer and their total purchase amount. By plotting these two key variables, the trend line helps us visualize whether higher marketing investments systematically yield higher returns from those users. According to the current dataset, our maximum individual purchase amount reached `r round(max(data$purchase_amount), 2)`, associated with varying levels of campaign spend. By evaluating the trajectory and cluster of these data points, we can conclude the answer to our research question: the positive slope of the trend line visually demonstrates that increased marketing spend per customer effectively drives higher overall purchase volumes.
 ```{r}
 #| label: fig-scatter-spend-purchase
 #| echo: false
